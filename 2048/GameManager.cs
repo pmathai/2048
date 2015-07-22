@@ -19,7 +19,43 @@ namespace _2048
         public void RunGame()
         {
             GameInput inputs = new GameInput();
-            inputs.GetDirection();
+
+            var input = inputs.GetDirection();
+
+            while (input != Input.Quit)
+            {
+                Console.WriteLine("What is input " + input);
+
+                //move board around
+                if (input == Input.Left)
+                {
+                    //move board left
+
+                }
+                else if(input == Input.Up)
+                {
+                    //move board up
+                }
+                else if(input == Input.Right)
+                {
+                    //move board right
+                }
+                else if(input == Input.Down)
+                {
+                    //move board down
+                }
+
+
+                //check if game over
+
+                //print board
+                input = inputs.GetDirection();
+
+            }
+            
+
+
+
         }
 
     }

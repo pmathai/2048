@@ -6,18 +6,37 @@ using System.Threading.Tasks;
 
 namespace _2048
 {
-    enum Input { Left, Up, Right, Down};
+    enum Input { Left, Up, Right, Down, Quit};
 
 
     class GameInput
     {
         public Input GetDirection()
         {
-            ConsoleKeyInfo key = Console.ReadKey();
+            ConsoleKeyInfo keyPress= Console.ReadKey();
 
-            Console.WriteLine("You pressed " + key.ToString());
+            //Console.WriteLine("You pressed " + keyPress.Key.ToString());
 
-            return Input.Down;
+            if (keyPress.Key.ToString() == "W")
+            {
+                return Input.Up;
+            }
+            else if (keyPress.Key.ToString() == "A")
+            {
+                return Input.Left;
+            }
+            else if (keyPress.Key.ToString() == "S")
+            {
+                return Input.Down;
+            }
+            else if (keyPress.Key.ToString() == "D")
+            {
+                return Input.Right;
+            }
+
+
+
+            return Input.Quit;
         }
     }
 }
