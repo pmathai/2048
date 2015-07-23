@@ -51,6 +51,32 @@ namespace _2048
             map[x2, y2] = 2;
         }
 
+        public void InsertNewNumber()
+        {
+            int attempt = 0;
+            bool success = false;
+            Random rnd = new Random();
+
+            while(success == false  && attempt < 15)
+            {
+                //do this stupid thing while you don't have a method to check for an open spot on the board
+                attempt++;
+
+                int x = rnd.Next(0, 3);
+                int y = rnd.Next(0, 3);
+
+                //if random spot is empty insert into map and turn success true
+                //else pick again
+                if(map[x,y] == 0)
+                {
+                    map[x, y] = 2;
+                    success = true;
+
+                }
+                
+
+            }
+        }
 
         public void MoveBoardLeft()
         {
@@ -94,7 +120,7 @@ namespace _2048
             int rowStart = 0;
 
             //loop through columns 2 to 0
-            for (int y = columnStart; y > 0; y--)
+            for (int y = columnStart; y >= 0; y--)
             {
                 //loop through rows 1 to 4
                 for (int x = rowStart; x < 4; x++)

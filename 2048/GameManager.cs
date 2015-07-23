@@ -50,7 +50,7 @@ namespace _2048
 
 
                 //check if game over or insert new random number
-
+                GameBoard.InsertNewNumber();
 
                 //print board
                 GameBoard.PrintBoard();
