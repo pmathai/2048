@@ -30,15 +30,18 @@ namespace _2048
                 if (input == Input.Left)
                 {
                     //move board left
+                    GameBoard.MoveBoardLeft();
 
                 }
                 else if(input == Input.Up)
                 {
-                    //move board up
+                    //move board up.
                 }
                 else if(input == Input.Right)
                 {
+
                     //move board right
+                    GameBoard.MoveBoardRight();
                 }
                 else if(input == Input.Down)
                 {
@@ -46,9 +49,11 @@ namespace _2048
                 }
 
 
-                //check if game over
+                //check if game over or insert new random number
+
 
                 //print board
+                GameBoard.PrintBoard();
                 input = inputs.GetDirection();
 
             }
